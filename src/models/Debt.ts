@@ -1,10 +1,11 @@
 import { uuid } from 'uuidv4';
+import User from './User';
 
 class Debt {
   id: string;
 
-  user_id: string;
-
+  user: User;
+  // adicionar um nome melhor para razao da divida
   title: string;
 
   value: number;
@@ -14,14 +15,14 @@ class Debt {
   updated_at: Date;
 
   constructor({
-    user_id,
+    user,
     title,
     value,
     created_at,
     updated_at
   }: Omit<Debt, 'id'>) {
     this.id = uuid();
-    this.user_id = user_id;
+    this.user = user;
     this.title = title;
     this.value = value;
     this.created_at = created_at;

@@ -1,7 +1,8 @@
 import Debt from '../models/Debt'
+import User from '../models/User'
 
 interface CreateDebtDTO {
-  user_id: string;
+  user: User;
   title: string;
   value: number;
   created_at: Date;
@@ -20,13 +21,13 @@ class DebtsRepository {
   }
 
   public create({
-     user_id,
+     user,
      title,
      value,
      created_at,
-     updated_at}: CreateDebtDTO): Debt {
+     updated_at }: CreateDebtDTO): Debt {
       const debt = new Debt({
-        user_id,
+        user,
         title,
         value,
         created_at,
