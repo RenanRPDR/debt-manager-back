@@ -4,7 +4,7 @@ import User from '../models/User';
 
 interface Request {
   user: User;
-  title: string;
+  debtName: string;
   value: number;
   created_at: Date;
   updated_at: Date;
@@ -19,14 +19,14 @@ class CreateDebtService {
 
   public execute({
     user,
-    title,
+    debtName,
     value,
     created_at,
     updated_at
    }: Request): Debt {
     const debt = this.debtsRepository.create({
       user,
-      title,
+      debtName,
       value,
       created_at,
       updated_at

@@ -1,11 +1,11 @@
 class User {
   id: string;
 
-  title: string;
+  name: string;
 
-  constructor ({ id, title}: Omit<User, 'id'>) {
+  constructor ({ id, name}: Omit<User, 'id'>) {
     this.id = id;
-    this.title = title
+    this.name = name
   }
 }
 

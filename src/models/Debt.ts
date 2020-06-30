@@ -6,7 +6,7 @@ class Debt {
 
   user: User;
   // adicionar um nome melhor para razao da divida
-  title: string;
+  debtName: string;
 
   value: number;
 
@@ -16,14 +16,14 @@ class Debt {
 
   constructor({
     user,
-    title,
+    debtName,
     value,
     created_at,
     updated_at
   }: Omit<Debt, 'id'>) {
     this.id = uuid();
     this.user = user;
-    this.title = title;
+    this.debtName = debtName;
     this.value = value;
     this.created_at = created_at;
     this.updated_at = updated_at;

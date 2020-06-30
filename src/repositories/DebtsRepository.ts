@@ -3,7 +3,7 @@ import User from '../models/User'
 
 interface CreateDebtDTO {
   user: User;
-  title: string;
+  debtName: string;
   value: number;
   created_at: Date;
   updated_at: Date;
@@ -22,13 +22,13 @@ class DebtsRepository {
 
   public create({
      user,
-     title,
+     debtName,
      value,
      created_at,
      updated_at }: CreateDebtDTO): Debt {
       const debt = new Debt({
         user,
-        title,
+        debtName,
         value,
         created_at,
         updated_at

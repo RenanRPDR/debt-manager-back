@@ -20,8 +20,8 @@ debtsRouter.get('/', (request, response) => {
 debtsRouter.post('/', (request, response) => {
   try {
     const {
-      user_id,
-      title,
+      user,
+      debtName,
       value,
       created_at,
       updated_at
@@ -32,8 +32,8 @@ debtsRouter.post('/', (request, response) => {
     );
 
     const debt = createDebt.execute({
-      user_id,
-      title,
+      user,
+      debtName,
       value,
       created_at,
       updated_at });
