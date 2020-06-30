@@ -2,10 +2,10 @@ import { Router } from 'express';
 import DebtsRepository from '../repositories/DebtsRepository';
 import CreateDebtService from '../services/CreateDebtService';
 
-const debtRouter = Router();
+const debtsRouter = Router();
 const debtsRepository = new DebtsRepository();
 
-debtRouter.get('/', (request, response) => {
+debtsRouter.get('/', (request, response) => {
   try {
     const debts = debtsRepository.all();
 
@@ -17,7 +17,7 @@ debtRouter.get('/', (request, response) => {
   }
 });
 
-debtRouter.post('/', (request, response) => {
+debtsRouter.post('/', (request, response) => {
   try {
     const {
       user_id,
@@ -44,6 +44,6 @@ debtRouter.post('/', (request, response) => {
   }
 });
 
-export default debtRouter;
+export default debtsRouter;
 
 

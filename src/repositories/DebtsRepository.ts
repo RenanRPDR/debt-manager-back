@@ -12,11 +12,11 @@ class DebtsRepository {
   private debts: Debt[];
 
   constructor() {
-    this.debts = []
+    this.debts = [];
   }
 
   public all(): Debt[] {
-    return this.debts
+    return this.debts;
   }
 
   public create({

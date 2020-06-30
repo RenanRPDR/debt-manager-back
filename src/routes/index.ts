@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import debtRouter from './debt.routes';
+import debtsRouter from './debt.routes';
 
 const routes = Router();
 
-routes.use('/debts', debtRouter);
+routes.use('/debts', debtsRouter);
 
 export default routes;
