@@ -6,7 +6,7 @@
     <tittle>Debts Management</tittle>
 <h2 >
 
-# Indice
+# Indicee
 - [Sobre](#-sobre)
 - [Implementações e configurações realizadas](#-implementações-e-configurações-realizadas)
 - [Tecnologias e lib's](#-tecnologias-e-libs)

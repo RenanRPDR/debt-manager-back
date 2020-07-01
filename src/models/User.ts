@@ -5,7 +5,7 @@ class User {
 
   constructor ({ id, name}: Omit<User, 'id'>) {
     this.id = id;
-    this.name = name
+    this.name = name;
   }
 }
 
