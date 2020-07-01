@@ -1,49 +1,26 @@
 import { Router } from 'express';
-import DebtsRepository from '../repositories/DebtsRepository';
-import CreateDebtService from '../services/CreateDebtService';
+import axios from 'axios';
+//import api from '../services/api'
 
-const debtsRouter = Router();
-const debtsRepository = new DebtsRepository();
+const usersRouter = Router();
 
-debtsRouter.get('/', (request, response) => {
+
+// VERIFICAR !
+usersRouter.get('/', (request, response) => {
   try {
-    const debts = debtsRepository.all();
+    const consult = axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(function(data) {
 
-    return response.json({
-      debts,
-    });
-  } catch (err) {
-    return response.status(400).json({ error: err.message });
-  }
-});
-
-debtsRouter.post('/', (request, response) => {
-  try {
-    const {
-      user,
-      debtName,
-      value,
-      created_at,
-      updated_at
-    } = request.body;
-
-    const createDebt = new CreateDebtService(
-      debtsRepository,
+      return response.json(data);
+      }
     );
-
-    const debt = createDebt.execute({
-      user,
-      debtName,
-      value,
-      created_at,
-      updated_at });
-
-      return response.json(debt);
   } catch (err) {
     return response.status(400).json({ error: err.message });
   }
 });
 
-export default debtsRouter;
+export default usersRouter;
+
+
 
 

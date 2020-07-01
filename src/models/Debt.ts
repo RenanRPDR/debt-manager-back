@@ -5,7 +5,7 @@ class Debt {
   id: string;
 
   user: User;
-  // adicionar um nome melhor para razao da divida
+
   debtName: string;
 
   value: number;
