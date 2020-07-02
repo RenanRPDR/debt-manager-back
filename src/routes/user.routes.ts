@@ -1,23 +1,27 @@
 import { Router } from 'express';
-import axios from 'axios';
-//import api from '../services/api'
+import UserApi from '../models/UserApi';
+
 
 const usersRouter = Router();
-
+const userApi = new UserApi();
 
 // VERIFICAR !
-usersRouter.get('/', (request, response) => {
-  try {
-    const consult = axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(function(data) {
+usersRouter.get('/', async (request, response) => {
 
-      return response.json(data);
-      }
-    );
-  } catch (err) {
-    return response.status(400).json({ error: err.message });
-  }
-});
+  const result = await userApi.listAll()
+
+  return response.json(result);
+    }
+  );
+
+usersRouter.get('/:id', async (request, response) => {
+  const { id } = request.params
+
+  const result = await userApi.byId(id)
+
+  return response.json(result);
+    }
+  );
 
 export default usersRouter;
 

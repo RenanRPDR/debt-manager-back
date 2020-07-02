@@ -1,6 +1,5 @@
 import { Router, response } from 'express';
 import DebtsRepository from '../repositories/DebtsRepository';
-import CreateDebtService from '../services/CreateDebtService';
 
 const debtsRouter = Router();
 const debtsRepository = new DebtsRepository();
@@ -15,29 +14,31 @@ debtsRouter.get('/', (request, response) => {
   }
 });
 
-/** Listar todas as dividas de um cliente */
-debtsRouter.get('/:id', (request, response) => {
+debtsRouter.get('/byUser/:id', (request, response) => {
   try {
-    // coding ...
-    return response.json();
+    const { id } = request.params
+
+    const userDebts = debtsRepository.all();
+
+    const result = userDebts.filter(debt => debt.user.id == id);
+
+    return response.json(result);
   } catch (err) {
     return response.status(400).json({ error: err.message });
   }
 });
 
-/** Obter detalhes de uma divida */
 debtsRouter.get('/:id', (request, response) => {
   try {
-    const selectOneDebt = debtsRepository;
+    const { id } = request.params
 
-    return response.json(selectOneDebt);
+    const result = debtsRepository.findById(id);
+
+    return response.json(result);
   } catch (err) {
     return response.status(400).json({ error: err.message });
   }
 });
-
-/*  Criar uma divida:
-Está faltando adicionar o id e nome de usuario vindo da API externa */
 
 debtsRouter.post('/', (request, response) => {
   try {
@@ -49,9 +50,8 @@ debtsRouter.post('/', (request, response) => {
       updated_at
     } = request.body;
 
-    const createDebt = new CreateDebtService(debtsRepository);
 
-      const debt = createDebt.execute({
+      const debt = debtsRepository.create({
         user,
         debtName,
         value,
@@ -64,15 +64,14 @@ debtsRouter.post('/', (request, response) => {
       }
     });
 
-/** Editar uma divida */
-// Consegui validar o ID mais nao estou conseguindo
-// trazer o debito existente para alteralo
-debtsRouter.put('/:id', (request, response) => {
+debtsRouter.post('/:id', (request, response) => {
   try {
     const { id } = request.params
-    const debt = debtsRepository.findById(id)
+    const { user, debtName, value, updated_at } = request.body
 
-    if ( debt < 0) {
+    const debt = debtsRepository.update(id, user, debtName, value, updated_at)
+
+    if (!debt) {
       return response.status(400).json({ error: 'Debt does not exist'})
     }
 
@@ -82,11 +81,12 @@ debtsRouter.put('/:id', (request, response) => {
   }
 });
 
-/** Deletar uma divida */
 debtsRouter.delete('/:id', (request, response) => {
   try {
-    // coding ...
-    return response.json();
+    const { id } = request.params
+
+    const debt = debtsRepository.delete(id)
+    return response.json({ message: "Deleted"});
   } catch (err) {
     return response.status(400).json({ error: err.message });
   }

@@ -1,7 +1,8 @@
 import Debt from '../models/Debt'
 import User from '../models/User'
 
-interface Request {
+interface DTO {
+  id: string;
   user: User;
   debtName: string;
   value: number;
@@ -20,13 +21,15 @@ class DebtsRepository {
     return this.debts;
   }
 
-  public findById(id: string) {
+  public findById(id: string): Debt {
 
-    const debtIndex = this.debts.findIndex(debts => debts.id === id);
+    const result = this.debts.filter(debt => debt.id === id);
 
-    // coding ...
+    if (!result[0]) {
+      return null;
+    }
 
-    return debtIndex;
+    return result[0];
   }
 
   public create({
@@ -34,7 +37,7 @@ class DebtsRepository {
      debtName,
      value,
      created_at,
-     updated_at }: Request): Debt {
+     updated_at }: any): Debt {
       const debt = new Debt({
         user,
         debtName,
@@ -47,6 +50,35 @@ class DebtsRepository {
 
       return debt;
     }
+
+  public update(
+    id: string,
+    user: User,
+    debtName: string,
+    value: number,
+    updated_at: Date,
+   ): Debt {
+
+    const debt = this.findById(id);
+
+    if (debt) {
+      debt.user = user;
+      debt.debtName = debtName;
+      debt.value = value;
+      debt.updated_at = updated_at;
+    }
+
+    return debt;
+    }
+
+  public delete(id: string): any {
+    for (const debtIndex in this.debts) {
+      if (this.debts[debtIndex].id == id) {
+        delete this.debts[debtIndex]
+      }
+    }
   }
+}
+
 
 export default DebtsRepository;
