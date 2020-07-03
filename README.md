@@ -1,9 +1,5 @@
-<h1 align="center">
-    <img src="https://ik.imagekit.io/911o9a87sc/node_E0Z8dA8cB.png" width="320" height="205">
-</h1>
-
 <h2 align="center">
-    <tittle>Debts Management</tittle>
+    <tittle>Backend do Debts Management</tittle>
 <h2 >
 
 # Indicee
@@ -15,19 +11,24 @@
 
 ## 💬️ Sobre o projeto
 
-O problema que iremos enfrentar nesse projeto é o gerenciamento de dívidas e
-devedores, fazendo a relação das dívidas com as pessoas existentes no JSONPlaceholder.
+O problema que iremos enfrentar nesse projeto é o gerenciamento de dívidas e devedores, realizando a relação das dívidas com as pessoas existentes no JSONPlaceholder.
 
-## {...} JSONPlaceholder
+## O que é o {...} JSONPlaceholder ?
 
-Acesse https://jsonplaceholder.typicode.com, lá terá uma breve explicação
-do mesmo e os recursos que são disponibilizados. O principal recurso abordado
-aqui é o /users, que retorna uma lista de usuários com diversos atributos.
+É uma API pública para testes. Acesse https://jsonplaceholder.typicode.com, para ver uma breve explicação do mesmo e os recursos que são disponibilizados. O principal recurso abordado
+aqui é o /users, que retorna uma lista de usuários com diversos atributos que iremos utilizar.
 
 ---
 
 ## 👨‍💻️ Implementações e configurações realizadas
-- texto texto texto ✔️;
+- Criação de uma dívida associando ela a uma pessoa ✔️;
+- Listar todas as dívidas de um usuário ✔️;
+- Consultar informações de uma dívida ✔️;
+- Atualizar informações de uma dívida ✔️;
+- Deltar uma dívida ✔️;
+- Consulta de todas dívidas cadastradas ✔️;
+- Listar usuários e seus dados em uma API externa ✔️;
+- Listar os dados de um usuário em uma API externa ✔️;
 
 ---
 

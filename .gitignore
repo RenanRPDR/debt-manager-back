@@ -1,8 +1,7 @@
 .idea/
 .vscode/
 node_modules/
-build/
 
-backend/README.md
-backend/requisitos.md
-backend/requisitos exemplos.md
+README.md
+requisitos.md
+

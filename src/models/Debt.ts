@@ -10,23 +10,19 @@ class Debt {
 
   value: number;
 
-  created_at: Date;
-
-  updated_at: Date;
+  date: Date;
 
   constructor({
     user,
     debtName,
     value,
-    created_at,
-    updated_at
+    date
   }: Omit<Debt, 'id'>) {
     this.id = uuid();
     this.user = user;
     this.debtName = debtName;
     this.value = value;
-    this.created_at = created_at;
-    this.updated_at = updated_at;
+    this.date = date;
   }
 }
 

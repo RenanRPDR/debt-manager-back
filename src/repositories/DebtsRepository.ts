@@ -1,15 +1,6 @@
 import Debt from '../models/Debt'
 import User from '../models/User'
 
-interface DTO {
-  id: string;
-  user: User;
-  debtName: string;
-  value: number;
-  created_at: Date;
-  updated_at: Date;
-}
-
 class DebtsRepository {
   private debts: Debt[];
 
@@ -36,14 +27,13 @@ class DebtsRepository {
      user,
      debtName,
      value,
-     created_at,
-     updated_at }: any): Debt {
+     date
+    }: any): Debt {
       const debt = new Debt({
         user,
         debtName,
         value,
-        created_at,
-        updated_at
+        date
       });
 
       this.debts.push(debt);
@@ -56,7 +46,7 @@ class DebtsRepository {
     user: User,
     debtName: string,
     value: number,
-    updated_at: Date,
+    date: Date,
    ): Debt {
 
     const debt = this.findById(id);
@@ -65,7 +55,7 @@ class DebtsRepository {
       debt.user = user;
       debt.debtName = debtName;
       debt.value = value;
-      debt.updated_at = updated_at;
+      debt.date = date;
     }
 
     return debt;

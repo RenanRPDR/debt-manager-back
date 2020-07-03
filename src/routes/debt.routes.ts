@@ -46,17 +46,16 @@ debtsRouter.post('/', (request, response) => {
       user,
       debtName,
       value,
-      created_at,
-      updated_at
-    } = request.body;
+      date
+      } = request.body;
 
 
       const debt = debtsRepository.create({
         user,
         debtName,
         value,
-        created_at,
-        updated_at });
+        date
+      });
 
         return response.json(debt);
       } catch (err) {
@@ -67,9 +66,9 @@ debtsRouter.post('/', (request, response) => {
 debtsRouter.post('/:id', (request, response) => {
   try {
     const { id } = request.params
-    const { user, debtName, value, updated_at } = request.body
+    const { user, debtName, value, date } = request.body
 
-    const debt = debtsRepository.update(id, user, debtName, value, updated_at)
+    const debt = debtsRepository.update(id, user, debtName, value, date)
 
     if (!debt) {
       return response.status(400).json({ error: 'Debt does not exist'})
