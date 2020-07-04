@@ -12,6 +12,11 @@ O problema que iremos enfrentar nesse projeto é o gerenciamento de dívidas e d
 
 ---
 
+## 👨‍💻️ Documentação da API
+- [Link da documentação](https://www.notion.so/Funcionamento-das-rotas-na-API-a5d5ffa6641e488e93392a615173fcf2)
+
+---
+
 ## 👨‍💻️ Implementações e configurações realizadas
 - Criação de uma dívida associando ela a uma pessoa ✔️;
 - Listar todas as dívidas de um usuário ✔️;
