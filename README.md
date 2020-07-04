@@ -32,57 +32,37 @@ aqui é o /users, que retorna uma lista de usuários com diversos atributos que 
 
 ---
 
-## 🚀 Tecnologias e libs [ATUALIZAR]
+## 🚀 Tecnologias e libs
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [NodeJS](https://nodejs.org/en/about/)
 - [Express](https://expressjs.com/pt-br/)
-- [Docker](https://www.docker.com/)
-- [TypeORM](https://typeorm.io/)
 - [yarn](https://yarnpkg.com/)
-- [JWT](https://jwt.io/)
-- [Multer](https://www.npmjs.com/package/multer)
 
 ---
 
-## 🔧️ Ferramentas [ATUALIZAR]
+## 🔧️ Ferramentas
 
 Ferramentas utilizadas nesse projeto:
 
 - [VSCode](https://code.visualstudio.com/)
 - [Insomnia](https://insomnia.rest/download/)
-- [DBeaver](https://dbeaver.io/)
 - [Git-e-Github](https://github.com/)
 
 ---
 
 ## 🗂 Como baixar e rodar o projeto [ATUALIZAR]
 
-<p>O banco de dados está rodando em um "Docker" para fins de estudo, vamos fazer a instalação e a configuração dessa base de dados com a aplicação.</p>
-
-
-<p>
-Rodei o ambiente em um linux com Ubuntu 18.04 LTS mas também é possível realizar a instalação no windows ou mac. Segue abaixo os links para instalação:
-
-- Ubuntu: https://docs.docker.com/engine/install/ubuntu/
-- Windows ou Mac: https://docs.docker.com/desktop/
-
-</p>
-
-
-<p>Com o Docker instalado podemos seguir os próximos passos:</p>
-
-
 ```bash
     # Clone o repositório no github
-    $ git clone https://github.com/RenanRPDR/GoStack11-iniciando-back-end.git
+    $ git clone https://github.com/RenanRPDR/debt-manager-back
 
-    # Entre no diretório "primeiro-projeto-node"
-    $ cd GoStack11-iniciando-back-end/
+    # Entre no diretório "backend"
+    $ cd backend
 
-    # Rode um yarn para instalar as dependências do projeto
+    # Rode um yarn ou um npm para instalar as dependências do projeto
     $ yarn install
 
     # Rode um migrate para criar as tabelas no banco de dados
