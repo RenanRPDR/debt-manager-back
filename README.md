@@ -1,22 +1,14 @@
-<h2 align="center">
+<h1 align="center">
     <tittle>Backend do Debts Management</tittle>
-<h2 >
-
-# Indicee
-- [Sobre](#-sobre)
-- [Implementações e configurações realizadas](#-implementações-e-configurações-realizadas)
-- [Tecnologias e lib's](#-tecnologias-e-libs)
-- [Ferramentas](#-ferramentas)
-- [Como baixar e rodar o projeto ?](#-como-baixar-e-rodar-o-projeto)
+<h1 >
 
 ## 💬️ Sobre o projeto
 
-O problema que iremos enfrentar nesse projeto é o gerenciamento de dívidas e devedores, realizando a relação das dívidas com as pessoas existentes no JSONPlaceholder.
+O problema que iremos enfrentar nesse projeto é o gerenciamento de dívidas e devedores, realizando o cadastro e a relação das dívidas com as pessoas existentes na nossa aplicação.
 
 ## O que é o {...} JSONPlaceholder ?
 
-É uma API pública para testes. Acesse https://jsonplaceholder.typicode.com, para ver uma breve explicação do mesmo e os recursos que são disponibilizados. O principal recurso abordado
-aqui é o /users, que retorna uma lista de usuários com diversos atributos que iremos utilizar.
+É uma API pública para testes. Acesse https://jsonplaceholder.typicode.com, para ver uma breve explicação do mesmo e os recursos que são disponibilizados. O principal recurso abordado aqui é o /users, que retorna uma lista de usuários com diversos atributos que iremos utilizar.
 
 ---
 
@@ -53,7 +45,7 @@ Ferramentas utilizadas nesse projeto:
 
 ---
 
-## 🗂 Como baixar e rodar o projeto [ATUALIZAR]
+## 🗂 Como baixar e rodar o projeto
 
 ```bash
     # Clone o repositório no github
@@ -65,10 +57,7 @@ Ferramentas utilizadas nesse projeto:
     # Rode um yarn ou um npm para instalar as dependências do projeto
     $ yarn install
 
-    # Rode um migrate para criar as tabelas no banco de dados
-    $ yarn typeorm migrate:run
-
-    # De um start no servidor e "have fun!😁️"
+    # De um start no servidor e "be happy!😁️"
     $ yarn dev:server
 ```
 ---
